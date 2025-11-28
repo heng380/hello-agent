@@ -26,8 +26,7 @@ class MyLLM(HelloAgentsLLM):
 
             # 设置默认模型和其他参数
             self.model = model or os.getenv("LLM_MODEL_ID") or "Qwen/Qwen2.5-VL-72B-Instruct"
-            self.temperature = kwargs.get('temperature', 0.7)
-            self.max_tokens = kwargs.get('max_tokens')
+            self.temperature = kwargs.get('temperature', 1)
             self.timeout = kwargs.get('timeout', 60)
             
             # 使用获取的参数创建OpenAI客户端实例
